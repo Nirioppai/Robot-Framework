@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.11.5 on win32)" generated="20231002 14:34:05.046" rpa="false" schemaversion="4">
+<suite id="s1" name="Sampletest" source="D:\Del Rosario Nico\Robot Framework Tutorial\testcases\sampletest.robot">
+<test id="s1-t1" name="Log Text Message" line="7">
+<kw name="CommonFunction1">
+<arg>Log this message</arg>
+<kw name="Log" library="BuiltIn">
+<arg>${message}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231002 14:34:05.076" level="INFO">Log this message</msg>
+<status status="PASS" starttime="20231002 14:34:05.076" endtime="20231002 14:34:05.076"/>
+</kw>
+<status status="PASS" starttime="20231002 14:34:05.076" endtime="20231002 14:34:05.076"/>
+</kw>
+<status status="PASS" starttime="20231002 14:34:05.076" endtime="20231002 14:34:05.076"/>
+</test>
+<status status="PASS" starttime="20231002 14:34:05.046" endtime="20231002 14:34:05.076"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Sampletest">Sampletest</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
