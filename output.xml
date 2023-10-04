@@ -1,29 +1,82 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1.1 (Python 3.11.5 on win32)" generated="20231002 14:34:05.046" rpa="false" schemaversion="4">
+<robot generator="Robot 6.1.1 (Python 3.11.5 on win32)" generated="20231004 09:35:38.483" rpa="false" schemaversion="4">
 <suite id="s1" name="Sampletest" source="D:\Del Rosario Nico\Robot Framework Tutorial\testcases\sampletest.robot">
-<test id="s1-t1" name="Log Text Message" line="7">
-<kw name="CommonFunction1">
-<arg>Log this message</arg>
-<kw name="Log" library="BuiltIn">
-<arg>${message}</arg>
+<kw name="Log" library="BuiltIn" type="SETUP">
+<arg>Test Starts</arg>
 <doc>Logs the given message with the given level.</doc>
-<msg timestamp="20231002 14:34:05.076" level="INFO">Log this message</msg>
-<status status="PASS" starttime="20231002 14:34:05.076" endtime="20231002 14:34:05.076"/>
+<msg timestamp="20231004 09:35:38.506" level="INFO">Test Starts</msg>
+<status status="PASS" starttime="20231004 09:35:38.506" endtime="20231004 09:35:38.506"/>
 </kw>
-<status status="PASS" starttime="20231002 14:34:05.076" endtime="20231002 14:34:05.076"/>
+<test id="s1-t1" name="TC1" line="13">
+<kw name="Log" library="BuiltIn">
+<arg>HELLOOO DJHASGDHJAGDJHAGDHJK</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231004 09:35:38.507" level="INFO">HELLOOO DJHASGDHJAGDJHAGDHJK</msg>
+<status status="PASS" starttime="20231004 09:35:38.506" endtime="20231004 09:35:38.507"/>
 </kw>
-<status status="PASS" starttime="20231002 14:34:05.076" endtime="20231002 14:34:05.076"/>
+<kw name="Sleep" library="BuiltIn">
+<arg>10s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231004 09:35:39.511" level="FAIL">Test timeout 1 second exceeded.</msg>
+<status status="FAIL" starttime="20231004 09:35:38.508" endtime="20231004 09:35:39.511"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Log this message</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" starttime="20231004 09:35:39.511" endtime="20231004 09:35:39.511"/>
+</kw>
+<timeout value="1 second"/>
+<status status="FAIL" starttime="20231004 09:35:38.506" endtime="20231004 09:35:39.512">Test timeout 1 second exceeded.</status>
 </test>
-<status status="PASS" starttime="20231002 14:34:05.046" endtime="20231002 14:34:05.076"/>
+<test id="s1-t2" name="TC2" line="18">
+<kw name="Log" library="BuiltIn">
+<arg>Log this message</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231004 09:35:39.514" level="INFO">Log this message</msg>
+<status status="PASS" starttime="20231004 09:35:39.514" endtime="20231004 09:35:39.514"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Log this message</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231004 09:35:39.516" level="INFO">Log this message</msg>
+<status status="PASS" starttime="20231004 09:35:39.515" endtime="20231004 09:35:39.516"/>
+</kw>
+<timeout value="1 second"/>
+<status status="PASS" starttime="20231004 09:35:39.514" endtime="20231004 09:35:39.516"/>
+</test>
+<test id="s1-t3" name="TC3" line="22">
+<kw name="Log" library="BuiltIn">
+<arg>Log this message</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231004 09:35:39.517" level="INFO">Log this message</msg>
+<status status="PASS" starttime="20231004 09:35:39.517" endtime="20231004 09:35:39.518"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Log this message</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231004 09:35:39.518" level="INFO">Log this message</msg>
+<status status="PASS" starttime="20231004 09:35:39.518" endtime="20231004 09:35:39.518"/>
+</kw>
+<timeout value="1 second"/>
+<status status="PASS" starttime="20231004 09:35:39.517" endtime="20231004 09:35:39.518"/>
+</test>
+<kw name="Log" library="BuiltIn" type="TEARDOWN">
+<arg>Test Ends</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231004 09:35:39.519" level="INFO">Test Ends</msg>
+<status status="PASS" starttime="20231004 09:35:39.519" endtime="20231004 09:35:39.519"/>
+</kw>
+<doc>This is a test suite</doc>
+<status status="FAIL" starttime="20231004 09:35:38.485" endtime="20231004 09:35:39.519"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="2" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Sampletest">Sampletest</stat>
+<stat pass="2" fail="1" skip="0" id="s1" name="Sampletest">Sampletest</stat>
 </suite>
 </statistics>
 <errors>
