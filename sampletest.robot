@@ -16,6 +16,15 @@ Suite Teardown    Log    Test Ends
 CommonFunction1
     [Arguments]    ${message}
     Log    ${message}
+UserKeyword1
+    Log    This is function 1
+
+UserKeyword2
+    Log    This is function 2
+
+GiveFNameLName
+    [Arguments]    ${fn}    ${ln}
+    Log    ${fn}${SPACE}${ln}
 
 suite_setup
     Log    SETUP SUITE
@@ -32,6 +41,11 @@ test_teardown
 
 finalFunction
     Log    This is the final function
+
+returnMessage
+    ${a}=    Set Variable     10
+    Return From Keyword If    ${a}>=10    Hello    #Return Hello if a>= 10
+    Return From Keyword If    ${a}<10    Hi
 
 *** Test Cases ***
 TC1
@@ -51,7 +65,7 @@ TC3
     Log    Log this message
     Log    Log this message
 ####################
-TC4
+TC4 - Setting Variables and Setting Global Variables
     ${a}=    Set Variable     100    
     ${b}=    Set Variable If    1==1    Value if True    Value if False
     ${c}=    Set Variable    THIS IS A GLOBAL VARIABLE
@@ -61,7 +75,7 @@ TC4
     Log    ${c}
 
 #Convert to Binary
-TC5
+TC5 - Converting to Binary
     ${d}=    Set Variable    99
     ${e}=    Convert To Binary    ${d}
     Log    ${e}
@@ -72,7 +86,7 @@ TC6 - Convert To Boolean
     ${g}=    Convert To Boolean    ${f}
     Log    ${g}
 
-TC7
+TC7 - Different Types of Logs and Importing Resources
     Set Log Level    INFO
     Log    this is Info Log    INFO
     Log    <h1>this is HTML Log</h1>    HTML
@@ -88,7 +102,7 @@ TC7
 
 ####################
 #Loops
-TC8
+TC8 - For Loops
 #Note: Updated Use of for loops
     FOR    ${i}    IN RANGE    1    3
         Log    ${i}
@@ -114,9 +128,47 @@ TC8
     END
 ####################
 #Conditionals
-TC10
+TC10 - Set Variable and Set Variable If
 
     ${cond}=    Set Variable    True
     ${a}=    Set Variable If    ${cond}==False    Value if true    Value if false
     Log    ${a}
-    
+
+TC11 - Run Keyword If
+
+    ${cond}=    Set Variable    True
+    Run Keyword If    ${cond}    UserKeyword1    ELSE    UserKeyword2
+
+TC12 - Run Keyword Unless
+#Updated method of Run Keyword Unless (Currently Deprecated)
+    FOR    ${i}    IN RANGE    1    11
+        Log    ${i}
+        IF    ${i} <= 5
+            Log    ----------
+        END
+    END
+
+TC13 - Continue and Exit For Loop If
+    FOR    ${i}    IN RANGE    1    11    
+        Log    start - ${i}
+        Continue For Loop If    ${i}>5
+        Log    end - ${i}    # This will not run if the condition above is satisfied. It will move on to the next iteration.
+    END
+
+    FOR    ${i}    IN RANGE    1    11    
+        Log    start - ${i}
+        Exit For Loop If    ${i}>5
+        Log    end - ${i}    # This will not run if the condition above is satisfied. It will exit the loop completely.
+    END
+
+TC14
+    ${a}=    Set Variable    10
+    Pass Execution If    ${a}==10    This passed the test
+    Fail    Forcefully Failing the test
+
+TC15
+    [Template]    GiveFNameLName
+    Nirio    Del Rosario
+    Dean    Caloracan
+    Monty    Toft
+
